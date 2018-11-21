@@ -51,7 +51,7 @@ func distributionAllGiftPool() {
 	num := utils.DistributionGiftPool()
 	log.Println("crontab end utils.DistributionGiftPool, num=", num)
 
-	// 每分钟执行一次
-	time.AfterFunc(time.Minute, distributionAllGiftPool)
+	// 每3 分钟执行一次
+	time.AfterFunc(3 * time.Minute, distributionAllGiftPool)
 }
 
