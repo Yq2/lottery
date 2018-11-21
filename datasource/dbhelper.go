@@ -30,7 +30,7 @@ func InstanceDbMaster() *xorm.Engine {
 }
 
 func NewDbMaster() *xorm.Engine {
-	sourcename := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8",
+	sourcename := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4",
 		conf.DbMaster.User,
 		conf.DbMaster.Pwd,
 		conf.DbMaster.Host,
@@ -42,7 +42,7 @@ func NewDbMaster() *xorm.Engine {
 		log.Fatal("dbhelper.InstanceDbMaster NewEngine error ", err)
 		return nil
 	}
-	instance.ShowSQL(true)
+	//instance.ShowSQL(true)
 	//instance.ShowSQL(false)
 	instance.ShowExecTime(true)
 	cacher := xorm.NewLRUCacher(xorm.NewMemoryStore(), 1000)

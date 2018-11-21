@@ -15,7 +15,7 @@ func (api *LuckyApi) prize(prizeCode int, limitBlack bool) *models.ObjGiftPrize 
 	var prizeGift *models.ObjGiftPrize
 	//获取所有有效的奖品信息
 	giftList := services.NewGiftService().GetAllUse(true)
-	fmt.Println("\n giftList:\n",giftList)
+	//fmt.Println("\n giftList:\n",giftList)
 	for _, gift := range giftList {
 		if gift.PrizeCodeA <= prizeCode &&
 			gift.PrizeCodeB >= prizeCode {
