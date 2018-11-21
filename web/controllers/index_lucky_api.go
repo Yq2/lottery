@@ -25,27 +25,27 @@ func (api *LuckyApi) luckyDo(uid int, username, ip string) (int, string, *models
 		//如果成功获取锁，最后要释放锁
 		defer utils.UnlockLucky(uid)
 	} else {
-		return 102, "正在抽奖，请稍后重试", nil
+		return 102, "[102]正在抽奖，请稍后重试", nil
 	}
 
 	// 3 用户当日抽奖次数增1
 	userDayNum := utils.IncrUserLuckyNum(uid) //当前用户uid增1
 	//如果增加后的次数大于了最大次数（增加后的抽奖次数可以等于最大抽奖次数，这表示是今日最后一次允许的抽奖次数）
 	if userDayNum > conf.UserPrizeMax {
-		return 103, "今日的抽奖次数已用完，明天再来吧", nil
+		return 103, "[103]今日的抽奖次数已用完，明天再来吧", nil
 	} else {
 		//检查缓存中用户抽奖次数是否和DB里面保存的用户抽奖次数一致，不一致的话以DB保存的数据为准更新缓存中的抽奖次数，
 		// 并在用户当日首次抽奖时创建一条抽奖记录保存到DB和缓存中
 		ok = api.checkUserday(uid, userDayNum)
 		if !ok {
-			return 103, "今日的抽奖次数已用完，明天再来吧", nil
+			return 103, "[103]今日的抽奖次数已用完，明天再来吧", nil
 		}
 	}
 
 	// 4 验证IP今日的参与次数
 	ipDayNum := utils.IncrIpLuckyNum(ip) //当前IP计数增1
 	if ipDayNum > conf.IpLimitMax {
-		return 104, "相同IP参与次数太多，明天再来参与吧", nil
+		return 104, "[104]相同IP参与次数太多，明天再来参与吧", nil
 	}
 
 	limitBlack := false // 黑名单
@@ -82,19 +82,19 @@ func (api *LuckyApi) luckyDo(uid int, username, ip string) (int, string, *models
 	if prizeGift == nil ||
 		prizeGift.PrizeNum < 0 ||
 		(prizeGift.PrizeNum > 0 && prizeGift.LeftNum <= 0) {
-		return 205, "很遗憾，没有中奖，请下次再试", nil
+		return 205, "[205]很遗憾，没有中奖，请下次再试", nil
 	}
 
 	// 9 有限制奖品发放
 	if prizeGift.PrizeNum > 0 {
 		//验证redis缓存中的奖品ID对应的奖品数量
 		if utils.GetGiftPoolNum(prizeGift.Id) <= 0 {
-			return 206, "很遗憾，没有中奖，请下次再试", nil
+			return 206, "[206]很遗憾，没有中奖，请下次再试", nil
 		}
 		//更新DB中奖品ID的剩余数量和缓存中奖品ID的剩余奖品数量
 		ok = utils.PrizeGift(prizeGift.Id, prizeGift.LeftNum)
 		if !ok {
-			return 207, "很遗憾，没有中奖，请下次再试", nil
+			return 207, "[207]很遗憾，没有中奖，请下次再试", nil
 		}
 	}
 
@@ -105,7 +105,7 @@ func (api *LuckyApi) luckyDo(uid int, username, ip string) (int, string, *models
 		//从gift_code_xxx 缓存里面随机弹出一张奖券，并在DB中将这张奖券标记为已发放
 		code := utils.PrizeCodeDiff(prizeGift.Id, services.NewCodeService())
 		if code == "" {
-			return 208, "很遗憾，没有中奖，请下次再试", nil
+			return 208, "[208]很遗憾，没有中奖，请下次再试", nil
 		}
 		prizeGift.Gdata = code
 	}
@@ -129,7 +129,7 @@ func (api *LuckyApi) luckyDo(uid int, username, ip string) (int, string, *models
 	if err != nil {
 		log.Println("index_lucky.GetLucky ServiceResult.Create ", result,
 			", error=", err)
-		return 209, "很遗憾，没有中奖，请下次再试", nil
+		return 209, "[209]很遗憾，没有中奖，请下次再试", nil
 	}
 	//奖品类型为：实物大奖
 	if prizeGift.Gtype == conf.GtypeGiftLarge {
@@ -137,5 +137,5 @@ func (api *LuckyApi) luckyDo(uid int, username, ip string) (int, string, *models
 		api.prizeLarge(ip, uid, username, userInfo, blackipInfo)
 	}
 	// 12 返回抽奖结果
-	return 0, "", prizeGift
+	return 0, "[0]", prizeGift
 }

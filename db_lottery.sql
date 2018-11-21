@@ -29,7 +29,7 @@ CREATE TABLE `lt_blackip` (
 
 /*Data for the table `lt_blackip` */
 
-insert  into `lt_blackip`(`id`,`ip`,`blacktime`,`sys_created`,`sys_updated`) values (1,'127.0.0.1',0,0,1532606350);
+/*insert  into `lt_blackip`(`id`,`ip`,`blacktime`,`sys_created`,`sys_updated`) values (1,'127.0.0.1',0,0,1532606350); */
 
 /*Table structure for table `lt_code` */
 
@@ -49,7 +49,8 @@ CREATE TABLE `lt_code` (
 
 /*Data for the table `lt_code` */
 
-insert  into `lt_code`(`id`,`gift_id`,`code`,`sys_created`,`sys_updated`,`sys_status`) values (1,4,'abc\r',1532602694,0,0),(2,4,'aa\r',1532602694,0,0),(3,4,'cs',1532602694,0,0),(4,4,'332',1532602970,0,2);
+insert  into `lt_code`(`id`,`gift_id`,`code`,`sys_created`,`sys_updated`,`sys_status`) values
+(1,4,'abc\r',1532602694,0,0),(2,4,'aa\r',1532602694,0,0),(3,4,'cs',1532602694,0,0),(4,4,'332',1532602970,0,2);
 
 /*Table structure for table `lt_gift` */
 
@@ -80,7 +81,12 @@ CREATE TABLE `lt_gift` (
 
 /*Data for the table `lt_gift` */
 
-insert  into `lt_gift`(`id`,`title`,`prize_num`,`prize_code`,`prize_time`,`img`,`displayorder`,`gtype`,`gdata`,`time_begin`,`time_end`,`prize_data`,`sys_status`,`sys_created`,`sys_updated`,`sys_ip`) values (1,'T恤',10,'1-100',30,'https://p0.ssl.qhmsg.com/t016c44d161c478cfe0.png',1,2,'',1532592420,1564128420,'',0,1532592429,1532593773,'::1'),(2,'360手机N7',1,'0-0',30,'https://p0.ssl.qhmsg.com/t016ff98b934914aca6.png',0,3,'',1532592420,1564128420,'',0,1532592474,0,''),(3,'手机充电器',10,'200-1000',30,'https://p0.ssl.qhmsg.com/t01ec4648d396ad46bf.png',3,2,'',1532592420,1564128420,'',0,1532592558,1532593828,'::1'),(4,'优惠券',100,'2000-5000',1,'https://p0.ssl.qhmsg.com/t01f84f00d294279957.png',4,1,'',1532592420,1564128420,'',0,1532599140,0,'::1');
+insert  into `lt_gift`(`id`,`title`,`prize_num`,`prize_code`,`prize_time`,`img`,`displayorder`,`gtype`,`gdata`,`time_begin`,`time_end`,`prize_data`,`sys_status`,`sys_created`,`sys_updated`,`sys_ip`) values
+(1,'T恤',10,'1-100',30,'https://p0.ssl.qhmsg.com/t016c44d161c478cfe0.png',1,2,'',1532592420,1564128420,'',0,1532592429,1532593773,'::1'),
+(2,'360手机N7',1,'0-0',30,'https://p0.ssl.qhmsg.com/t016ff98b934914aca6.png',0,3,'',1532592420,1564128420,'',0,1532592474,0,''),
+(3,'手机充电器',10,'200-1000',30,'https://p0.ssl.qhmsg.com/t01ec4648d396ad46bf.png',3,2,'',1532592420,1564128420,'',0,1532592558,1532593828,'::1'),
+(4,'优惠券',100,'2000-5000',1,'https://p0.ssl.qhmsg.com/t01f84f00d294279957.png',4,1,'',1532592420,1564128420,'',0,1532599140,0,'::1'),
+(5,'宠物刺猬',10,'0-0',30,'https://desk-fd.zol-img.com.cn/t_s1024x768c5/g5/M00/0F/07/ChMkJlauymeIYMI3AAhS3aKLXp4AAH8tQD5_3oACFL1729.jpg',0,3,'',1532592420,1564128420,'',0,1532592474,0,'');
 
 /*Table structure for table `lt_result` */
 
@@ -126,7 +132,7 @@ CREATE TABLE `lt_user` (
 
 /*Data for the table `lt_user` */
 
-insert  into `lt_user`(`id`,`username`,`blacktime`,`realname`,`mobile`,`address`,`sys_created`,`sys_updated`,`sys_ip`) values (1,'wangyi',0,'一凡Sir','11111111111','abcdefg',0,1532595094,'');
+insert  into `lt_user`(`id`,`username`,`blacktime`,`realname`,`mobile`,`address`,`sys_created`,`sys_updated`,`sys_ip`) values (1,'yq',0,'杨强','11111111111','abcdefg',0,1532595094,'');
 
 /*Table structure for table `lt_userday` */
 

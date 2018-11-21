@@ -113,8 +113,8 @@ func main() {
 	var cmd string = "DoLucky"
 	//var cmd string = "MyPrizeList"
 	var uid int64 = 1
-	username := "admin"
-	ip := "39.107.77.94"
+	username := "admin1"
+	ip := "127.0.0.5"
 	now := time.Now().UnixNano()
 	app := "web"
 	str := fmt.Sprintf("uid=%d&username=%s&ip=%s&now=%d&app=%s",
