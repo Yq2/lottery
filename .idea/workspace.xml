@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ddddb13e-30b4-4815-8013-7b56bf3e33d1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/comm/func_web.go" beforeDir="false" afterPath="$PROJECT_DIR$/comm/func_web.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc/lucky.go" beforeDir="false" afterPath="$PROJECT_DIR$/rpc/lucky.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc/lucky_service-remote/go_client/goclient_main.go" beforeDir="false" afterPath="$PROJECT_DIR$/rpc/lucky_service-remote/go_client/goclient_main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thrift/lucky.thrift" beforeDir="false" afterPath="$PROJECT_DIR$/thrift/lucky.thrift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/controllers/index_lucky_9prize.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/controllers/index_lucky_9prize.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/controllers/index_lucky_api.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/controllers/index_lucky_api.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/controllers/rpc.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/controllers/rpc.go" afterDir="false" />
-    </list>
+    <list default="true" id="ddddb13e-30b4-4815-8013-7b56bf3e33d1" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +45,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="go" value="153" />
+          <entry key="go" value="154" />
           <entry key="html" value="5" />
           <entry key="java" value="3" />
           <entry key="js" value="3" />
@@ -64,7 +56,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Go" value="153" />
+          <entry key="Go" value="154" />
           <entry key="HTML" value="5" />
           <entry key="JavaScript" value="3" />
           <entry key="PLAIN_TEXT" value="5" />
@@ -105,7 +97,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rpc/lucky_service-remote/go_client/goclient_main.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="19">
@@ -113,6 +105,15 @@
               <folding>
                 <element signature="e#128#311#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/controllers/rpc.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="47" column="7" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -368,13 +369,13 @@
     <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16257995" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16257995" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Console" weight="0.329718" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.329718" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -703,13 +704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/controllers/rpc.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="170" column="1" lean-forward="true" selection-start-line="170" selection-start-column="1" selection-end-line="170" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/comm/func_web.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -755,6 +749,13 @@
           <folding>
             <element signature="e#128#311#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/controllers/rpc.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="47" column="7" lean-forward="true" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
         </state>
       </provider>
     </entry>
