@@ -112,14 +112,20 @@ func main() {
 	// 远程方法调用的参数
 	var cmd string = "DoLucky"
 	//var cmd string = "MyPrizeList"
-	var uid int64 = 1
-	username := "admin1"
-	ip := "127.0.0.5"
-	now := time.Now().UnixNano()
+	var uid int64 = int64(comm.Random(100000))
+	username := fmt.Sprintf("rpc_test_%d",comm.Random(1000))
+	ip := fmt.Sprintf("%d.%d.%d.%d",
+		comm.Random(256),
+		comm.Random(256),
+		comm.Random(256),
+		comm.Random(256),)
+	now := time.Now().Unix()
 	app := "web"
 	str := fmt.Sprintf("uid=%d&username=%s&ip=%s&now=%d&app=%s",
 		uid, username, ip, now, app)
-	sign := comm.CreateSign(str)
+	fmt.Println("rpc request str.",str)
+	sign := comm.CreateSign(str) //rpc接口签名验证
+	fmt.Println("rpc request sign.",sign)
 	switch cmd {
 	case "DoLucky":
 		fmt.Println(cmd)

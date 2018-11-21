@@ -30,6 +30,7 @@ type rpcServer struct{
 	//TODO: 需要实现 LuckyService 接口
 }
 
+//rpc接口签名验证
 func (serv *rpcServer) checkParams(uid int64, username string, ip string, now int64, app string, sign string) error {
 	//if uid < 1 {
 	//	return errors.New("uid参数不正确")
@@ -59,6 +60,7 @@ func (serv *rpcServer) checkParams(uid int64, username string, ip string, now in
 }
 
 func (serv *rpcServer) DoLucky(ctx context.Context, uid int64, username string, ip string, now int64, app string, sign string) (r *rpc.DataResult_, err error) {
+	//rpc接口签名验证
 	err = serv.checkParams(uid, username, ip, now, app, sign)
 	if err != nil {
 		return nil, err
