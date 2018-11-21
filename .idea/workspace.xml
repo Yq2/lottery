@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ddddb13e-30b4-4815-8013-7b56bf3e33d1" name="Default Changelist" comment="" />
+    <list default="true" id="ddddb13e-30b4-4815-8013-7b56bf3e33d1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/middleware/basicauth.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/middleware/basicauth.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/views/admin/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/views/admin/layout.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,30 +49,30 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="go" value="174" />
+          <entry key="go" value="179" />
           <entry key="html" value="7" />
           <entry key="java" value="3" />
           <entry key="js" value="3" />
           <entry key="md" value="1" />
-          <entry key="sql" value="7" />
+          <entry key="sql" value="8" />
           <entry key="thrift" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Go" value="174" />
+          <entry key="Go" value="179" />
           <entry key="HTML" value="7" />
           <entry key="JavaScript" value="3" />
           <entry key="PLAIN_TEXT" value="5" />
-          <entry key="SQL" value="6" />
+          <entry key="SQL" value="7" />
           <entry key="Scratch" value="1" />
           <entry key="Thrift" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="go" value="856" />
-          <entry key="html" value="20" />
+          <entry key="go" value="864" />
+          <entry key="html" value="33" />
           <entry key="sql" value="119" />
           <entry key="thrift" value="47" />
           <entry key="txt" value="7" />
@@ -76,8 +80,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Go" value="856" />
-          <entry key="HTML" value="20" />
+          <entry key="Go" value="864" />
+          <entry key="HTML" value="33" />
           <entry key="PLAIN_TEXT" value="7" />
           <entry key="SQL" value="34" />
           <entry key="Scratch" value="85" />
@@ -89,32 +93,20 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/conf/project.go">
+        <entry file="file://$PROJECT_DIR$/web/middleware/identity/identity.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="39" column="31" lean-forward="true" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/views/admin/gift.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#6#0" expanded="true" />
-                <element signature="e#6#12#0" expanded="true" />
-                <element signature="e#12#18#0" expanded="true" />
-                <element signature="e#18#24#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="342">
+              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/views/admin/layout.html">
+        <entry file="file://$PROJECT_DIR$/web/middleware/basicauth.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-684" />
+            <state relative-caret-position="171">
+              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+            </state>
           </provider>
         </entry>
       </file>
@@ -164,6 +156,8 @@
         <option value="$PROJECT_DIR$/datasource/dbhelper.go" />
         <option value="$PROJECT_DIR$/web/controllers/index_lucky_api.go" />
         <option value="$PROJECT_DIR$/web/controllers/index_lucky_9prize.go" />
+        <option value="$PROJECT_DIR$/web/views/admin/layout.html" />
+        <option value="$PROJECT_DIR$/web/middleware/basicauth.go" />
       </list>
     </option>
   </component>
@@ -246,11 +240,6 @@
               <item name="rpc" type="462c0819:PsiDirectoryNode" />
               <item name="lucky_service-remote" type="462c0819:PsiDirectoryNode" />
               <item name="go_client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lottery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lottery" type="462c0819:PsiDirectoryNode" />
-              <item name="rpc_bak" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lottery" type="b2602c69:ProjectViewProjectNode" />
@@ -516,12 +505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/middleware/basicauth.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/middleware/identity/identity.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/routes/routes.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="698">
@@ -543,13 +526,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db_lottery.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
@@ -557,13 +533,6 @@
           <folding>
             <element signature="e#14#205#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/lt_gift.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="66" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="66" />
         </state>
       </provider>
     </entry>
@@ -677,13 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/comm/functions.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="817">
-          <caret line="56" column="36" lean-forward="true" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/controllers/rpc.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-192">
@@ -759,16 +721,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/project.go">
+    <entry file="file://$PROJECT_DIR$/web/views/admin/layout.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="39" column="31" lean-forward="true" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+        <state relative-caret-position="209">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/lt_gift.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="84" lean-forward="true" selection-start-line="15" selection-start-column="84" selection-end-line="15" selection-end-column="84" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/views/admin/gift.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="-285">
           <folding>
             <element signature="e#0#6#0" expanded="true" />
             <element signature="e#6#12#0" expanded="true" />
@@ -778,9 +750,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/admin/layout.html">
+    <entry file="file://$PROJECT_DIR$/conf/project.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-684" />
+        <state relative-caret-position="190">
+          <caret line="39" column="31" lean-forward="true" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db_lottery.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comm/functions.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+          <folding>
+            <element signature="e#14#198#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/middleware/identity/identity.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/middleware/basicauth.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        </state>
       </provider>
     </entry>
   </component>
