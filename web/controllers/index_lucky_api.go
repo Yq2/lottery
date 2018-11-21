@@ -82,6 +82,7 @@ func (api *LuckyApi) luckyDo(uid int, username, ip string) (int, string, *models
 	fmt.Println("prizeCode.",prizeCode)
 	fmt.Println("limitBlack.",limitBlack)
 	prizeGift := api.prize(prizeCode, limitBlack)
+	fmt.Println("抽奖结束.prizeGift.",prizeGift)
 	if prizeGift == nil ||
 		prizeGift.PrizeNum < 0 ||
 		(prizeGift.PrizeNum > 0 && prizeGift.LeftNum <= 0) {
