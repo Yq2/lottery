@@ -3,6 +3,7 @@ namespace php rpc
 namespace java rpc
 
 # 奖品详情
+# 参数的序号是必须的
 struct DataGiftPrize{
     1: i64    Id             = 0
     2: string Title          = ""
@@ -11,7 +12,7 @@ struct DataGiftPrize{
     5: i64    Gtype          = 0
     6: string Gdata          = ""
 }
-# 返回值
+# 抽奖返回值
 struct DataResult{
     1:i64           Code
     2:string        Msg

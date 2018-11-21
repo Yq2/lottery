@@ -20,6 +20,5 @@ var _ = bytes.Equal
 
 
 func init() {
-
 }
 

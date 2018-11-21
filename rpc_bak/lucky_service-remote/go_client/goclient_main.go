@@ -29,10 +29,10 @@ func Usage() {
 
 func main() {
 	flag.Usage = Usage
-	var host string = "39.107.77.94"
-	var port int = 8085
+	var host string = "localhost"
+	var port int = 8080
 	var protocol string = "json"
-	var urlString string = "http://39.107.77.94:8085/rpc"
+	var urlString string = "http://localhost:8080/rpc"
 	var framed bool = true
 	var useHttp bool = true
 	var parsedUrl *url.URL
@@ -114,7 +114,7 @@ func main() {
 	//var cmd string = "MyPrizeList"
 	var uid int64 = 1
 	username := "admin"
-	ip := "39.107.77.94"
+	ip := "127.0.0.1"
 	now := time.Now().UnixNano()
 	app := "web"
 	str := fmt.Sprintf("uid=%d&username=%s&ip=%s&now=%d&app=%s",

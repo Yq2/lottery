@@ -10,7 +10,6 @@ import (
 	"fmt"
 	"git.apache.org/thrift.git/lib/go/thrift"
 )
-//这里面的方法不需要自己改动，都是自动生成的
 
 // (needed to ensure safety because of naive import list construction.)
 var _ = thrift.ZERO

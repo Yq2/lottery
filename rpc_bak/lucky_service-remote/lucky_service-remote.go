@@ -17,7 +17,7 @@ import (
         "github.com/Yq2/lottery/rpc"
 )
 
-//测试使用
+
 func Usage() {
   fmt.Fprintln(os.Stderr, "Usage of ", os.Args[0], " [-h host:port] [-u url] [-f[ramed]] function [arg1 [arg2...]]:")
   flag.PrintDefaults()
