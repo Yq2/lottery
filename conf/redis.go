@@ -11,7 +11,7 @@ type RdsConfig struct {
 // 系统中用到的所有redis缓存资源
 var RdsCacheList = []RdsConfig{
 	{
-		Host:      "39.107.77.94",
+		Host:      "localhost",
 		Port:      6379,
 		User:      "",
 		Pwd:       "",

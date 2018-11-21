@@ -17,7 +17,7 @@ type DbConfig struct {
 // 系统中所有mysql主库 root:root@tcp(127.0.0.1:3306)/lottery?charset=utf-8
 var DbMasterList = []DbConfig{
 	{
-		Host:      "39.107.77.94",
+		Host:      "localhost",
 		Port:      3306,
 		User:      "root",
 		Pwd:       "123456",
