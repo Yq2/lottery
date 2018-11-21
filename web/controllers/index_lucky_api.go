@@ -75,14 +75,14 @@ func (api *LuckyApi) luckyDo(uid int, username, ip string) (int, string, *models
 
 	// 7 获得抽奖编码
 	//产生一个随机抽奖码
-	prizeCode := comm.Random(1000)
+	prizeCode := comm.Random(3000)
 	// 8 产生随机抽奖码，检验是否限制抽奖已经抽奖码匹配的是虚拟将
 	//limitBlack参数是必须的，因为用户就算已经抽过奖品了但还未超过最大抽奖次数，任然可以继续抽奖
-	fmt.Println("开始抽奖...")
-	fmt.Println("prizeCode.",prizeCode)
-	fmt.Println("limitBlack.",limitBlack)
+	fmt.Println("\n[开始抽奖]...")
+	fmt.Println("\n[prizeCode].",prizeCode)
+	fmt.Println("\n[limitBlack].",limitBlack)
 	prizeGift := api.prize(prizeCode, limitBlack)
-	fmt.Println("抽奖结束.prizeGift.",prizeGift)
+	fmt.Println("\n[抽奖结束].prizeGift.",prizeGift)
 	if prizeGift == nil ||
 		prizeGift.PrizeNum < 0 ||
 		(prizeGift.PrizeNum > 0 && prizeGift.LeftNum <= 0) {

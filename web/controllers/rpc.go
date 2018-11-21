@@ -6,14 +6,18 @@ package controllers
 
 import (
 	"context"
+	"fmt"
 	"git.apache.org/thrift.git/lib/go/thrift"
+	"github.com/Yq2/lottery/comm"
 	"github.com/Yq2/lottery/rpc"
 	"github.com/Yq2/lottery/services"
 	"github.com/kataras/iris"
 	"github.com/kataras/iris/core/errors"
 	"github.com/lunny/log"
 	"io/ioutil"
+	"math"
 	"regexp"
+	"time"
 )
 
 type RpcController struct {
@@ -26,36 +30,36 @@ type RpcController struct {
 	ServiceBlackip services.BlackipService
 }
 
-type rpcServer struct{
+type rpcServer struct {
 	//TODO: 需要实现 LuckyService 接口
 }
 
 //rpc接口签名验证
 func (serv *rpcServer) checkParams(uid int64, username string, ip string, now int64, app string, sign string) error {
-	//if uid < 1 {
-	//	return errors.New("uid参数不正确")
-	//}
-	//str := fmt.Sprint("uid=%d&username=%s&ip=%s&now=%d&app=%s",
-	//	uid, username, ip, now, app)
-	//usign := comm.CreateSign(str)
-	//if usign != sign {
-	//	return errors.New("sign签名参数不正确")
-	//}
-	//if now > math.MaxInt32 {
-	//	// 纳秒时间
-	//	nowt := time.Now().UnixNano()
-	//	//now过期10秒
-	//	if nowt > now + 10*100000000 {
-	//		return errors.New("now参数不正确")
-	//	}
-	//} else {
-	//	// 秒钟，UNIX时间戳
-	//	nowt := time.Now().Unix()
-	//	//now过期10秒
-	//	if nowt > now + 10 {
-	//		return errors.New("now参数不正确")
-	//	}
-	//}
+	if uid < 1 {
+		return errors.New("uid参数不正确")
+	}
+	str := fmt.Sprint("uid=%d&username=%s&ip=%s&now=%d&app=%s",
+		uid, username, ip, now, app)
+	usign := comm.CreateSign(str)
+	if usign != sign {
+		return errors.New("sign签名参数不正确")
+	}
+	if now > math.MaxInt32 {
+		// 纳秒时间
+		nowt := time.Now().UnixNano()
+		//now过期10秒
+		if nowt > now+10*100000000 {
+			return errors.New("now参数不正确")
+		}
+	} else {
+		// 秒钟，UNIX时间戳
+		nowt := time.Now().Unix()
+		//now过期10秒
+		if nowt > now+10 {
+			return errors.New("now参数不正确")
+		}
+	}
 	return nil
 }
 
@@ -103,7 +107,7 @@ func (serv *rpcServer) MyPrizeList(ctx context.Context, uid int64, username stri
 	//抽奖结果切片
 	rData := make([]*rpc.DataGiftPrize, len(list))
 	for i, data := range list {
-		info := &rpc.DataGiftPrize {
+		info := &rpc.DataGiftPrize{
 			ID:           int64(data.Id),
 			Title:        data.GiftName,
 			Img:          "",
@@ -127,7 +131,7 @@ func (c *RpcController) Post() {
 	)
 	//输入buffer
 	inBuffer = thrift.NewTMemoryBuffer()
-	// iris的请求转换为thrift格式
+	// iris的请求 Body 转换为thrift格式
 	body, err := ioutil.ReadAll(c.Ctx.Request().Body)
 	if err != nil {
 		log.Println(err)
@@ -156,7 +160,7 @@ func (c *RpcController) Post() {
 	process := rpc.NewLuckyServiceProcessor(serv)
 	// 实际的处理各个远程方法调用
 	process.Process(c.Ctx.Request().Context(), inProtocol, outProtocol)
-
+	//RemainingBytes  表示输出buffer里面剩余字节数
 	out := make([]byte, outBuffer.RemainingBytes())
 	//将outBuffer输出到[]byte切片中
 	outBuffer.Read(out)
@@ -181,6 +185,5 @@ func convertReqBody(body []byte) []byte {
 	body = reg4.ReplaceAll(body, []byte("}"))
 	body = reg5.ReplaceAll(body, []byte("["))
 	body = reg6.ReplaceAll(body, []byte("]"))
-
 	return body
 }

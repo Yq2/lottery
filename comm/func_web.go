@@ -34,7 +34,7 @@ func GetLoginUser(request *http.Request) *models.ObjLoginuser {
 	uid := Random(1000000)
 	loginuser := &models.ObjLoginuser{
 		Uid:uid,
-		Username:fmt.Sprintf("test_uid_%d",uid),
+		Username:fmt.Sprintf("http_test_uid_%d",uid),
 		Now:NowUnix(),
 		Ip:ClientIP(request),
 	}

@@ -82,6 +82,7 @@ func main() {
 	}
 	defer trans.Close()
 	var protocolFactory thrift.TProtocolFactory
+	//构建不同协议的组件
 	switch protocol {
 	case "compact":
 		protocolFactory = thrift.NewTCompactProtocolFactory()
@@ -102,7 +103,7 @@ func main() {
 	}
 	iprot := protocolFactory.GetProtocol(trans)
 	oprot := protocolFactory.GetProtocol(trans)
-	// thrfit服务的客户端程序
+	// thrfit 服务的客户端程序
 	client := rpc.NewLuckyServiceClient(thrift.NewTStandardClient(iprot, oprot))
 	if err := trans.Open(); err != nil {
 		fmt.Fprintln(os.Stderr, "Error opening socket to ", host, ":", port, " ", err)
@@ -113,14 +114,14 @@ func main() {
 	var cmd string = "DoLucky"
 	//var cmd string = "MyPrizeList"
 	var uid int64 = int64(comm.Random(100))
-	username := fmt.Sprintf("rpc_test_%d",comm.Random(1000))
+	username := fmt.Sprintf("rpc_test_username_%d",comm.Random(1000))
 	ip := fmt.Sprintf("%d.%d.%d.%d",
 		comm.Random(256),
 		comm.Random(256),
 		comm.Random(256),
 		comm.Random(256),)
 	now := time.Now().Unix()
-	app := "web"
+	app := fmt.Sprintf("rpc_test_app_id_%d", comm.Random(1000))
 	str := fmt.Sprintf("uid=%d&username=%s&ip=%s&now=%d&app=%s",
 		uid, username, ip, now, app)
 	fmt.Println("rpc request str.",str)
