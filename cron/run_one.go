@@ -31,12 +31,12 @@ func resetAllGiftPrizeData() {
 		if giftInfo.PrizeTime != 0 &&
 			(giftInfo.PrizeData == "" || giftInfo.PrizeEnd <= nowTime) {
 			// 立即执行
-			log.Println("crontab start utils.ResetGiftPrizeData giftInfo=", giftInfo)
+			log.Println("crontab start[resetAllGiftPrizeData.] utils.ResetGiftPrizeData giftInfo=", giftInfo)
 			//重置发奖计划
 			utils.ResetGiftPrizeData(&giftInfo, giftService)
 			// 预加载缓存数据
 			giftService.GetAll(true)
-			log.Println("crontab end utils.ResetGiftPrizeData giftInfo")
+			log.Println("crontab end[resetAllGiftPrizeData.] utils.ResetGiftPrizeData giftInfo")
 		}
 	}
 
@@ -47,9 +47,9 @@ func resetAllGiftPrizeData() {
 // 根据发奖计划，把奖品数量放入奖品池
 // 每分钟执行一次
 func distributionAllGiftPool() {
-	log.Println("crontab start utils.DistributionGiftPool")
+	log.Println("crontab start[distributionAllGiftPool.] utils.DistributionGiftPool")
 	num := utils.DistributionGiftPool()
-	log.Println("crontab end utils.DistributionGiftPool, num=", num)
+	log.Println("crontab end[distributionAllGiftPool.] utils.DistributionGiftPool, num=", num)
 
 	// 每3 分钟执行一次
 	time.AfterFunc(3 * time.Minute, distributionAllGiftPool)
