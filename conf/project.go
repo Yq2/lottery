@@ -47,7 +47,7 @@ const SysTimeform = "2006-01-02 15:04:05"
 const SysTimeformShort = "2006-01-02"
 
 // 是否需要启动全局计划任务服务
-var RunningCrontabService = false
+var RunningCrontabService = true
 
 // 加载一个时区
 var SysTimeLocation, _ = time.LoadLocation("Asia/Chongqing")
