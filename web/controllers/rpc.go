@@ -6,18 +6,14 @@ package controllers
 
 import (
 	"context"
-	"fmt"
 	"git.apache.org/thrift.git/lib/go/thrift"
-	"github.com/Yq2/lottery/comm"
+	"github.com/Yq2/lottery/rpc"
+	"github.com/Yq2/lottery/services"
 	"github.com/kataras/iris"
 	"github.com/kataras/iris/core/errors"
 	"github.com/lunny/log"
-	"github.com/Yq2/lottery/rpc"
-	"github.com/Yq2/lottery/services"
 	"io/ioutil"
-	"math"
 	"regexp"
-	"time"
 )
 
 type RpcController struct {
@@ -35,30 +31,30 @@ type rpcServer struct{
 }
 
 func (serv *rpcServer) checkParams(uid int64, username string, ip string, now int64, app string, sign string) error {
-	if uid < 1 {
-		return errors.New("uid参数不正确")
-	}
-	str := fmt.Sprint("uid=%d&username=%s&ip=%s&now=%d&app=%s",
-		uid, username, ip, now, app)
-	usign := comm.CreateSign(str)
-	if usign != sign {
-		return errors.New("sign签名参数不正确")
-	}
-	if now > math.MaxInt32 {
-		// 纳秒时间
-		nowt := time.Now().UnixNano()
-		//now过期10秒
-		if nowt > now + 10*100000000 {
-			return errors.New("now参数不正确")
-		}
-	} else {
-		// 秒钟，UNIX时间戳
-		nowt := time.Now().Unix()
-		//now过期10秒
-		if nowt > now + 10 {
-			return errors.New("now参数不正确")
-		}
-	}
+	//if uid < 1 {
+	//	return errors.New("uid参数不正确")
+	//}
+	//str := fmt.Sprint("uid=%d&username=%s&ip=%s&now=%d&app=%s",
+	//	uid, username, ip, now, app)
+	//usign := comm.CreateSign(str)
+	//if usign != sign {
+	//	return errors.New("sign签名参数不正确")
+	//}
+	//if now > math.MaxInt32 {
+	//	// 纳秒时间
+	//	nowt := time.Now().UnixNano()
+	//	//now过期10秒
+	//	if nowt > now + 10*100000000 {
+	//		return errors.New("now参数不正确")
+	//	}
+	//} else {
+	//	// 秒钟，UNIX时间戳
+	//	nowt := time.Now().Unix()
+	//	//now过期10秒
+	//	if nowt > now + 10 {
+	//		return errors.New("now参数不正确")
+	//	}
+	//}
 	return nil
 }
 
