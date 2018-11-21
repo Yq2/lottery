@@ -34,7 +34,7 @@
                 <li><a href="/logout">退出</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="https://www.github.com/Yq2/" target="_blank">慕课网</a></li>
+                <li><a href="https://www.github.com/Yq2/" target="_blank">github.com/Yq2</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">更多 <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -72,9 +72,9 @@
 <script>
     var uid = 0;
     var username = "";
-    var login = $.cookie('lottery_loginuser')
+    var login = $.cookie('lottery_loginuser');
     if (login && login.length > 1) {
-        var datas = login.split("&")
+        var datas = login.split("&");
         for(var i = 0; i < datas.length; i++) {
             var data = datas[i].split("=");
             if (data[0] == "uid") {

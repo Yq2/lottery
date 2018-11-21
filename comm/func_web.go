@@ -14,10 +14,10 @@ func ClientIP(request *http.Request) string {
 	//host, _, _ := net.SplitHostPort(request.RemoteAddr)
 	//模拟访问IP
 	host := fmt.Sprintf("%d.%d.%d.%d",
-		Random(255),
-		Random(255),
-		Random(255),
-		Random(255),)
+		Random(256),
+		Random(256),
+		Random(256),
+		Random(256),)
 	return host
 }
 
@@ -31,7 +31,7 @@ func Redirect(writer http.ResponseWriter, url string) {
 
 // 从cookie中得到当前登录的用户
 func GetLoginUser(request *http.Request) *models.ObjLoginuser {
-	uid := Random(100000)
+	uid := Random(1000000)
 	loginuser := &models.ObjLoginuser{
 		Uid:uid,
 		Username:fmt.Sprintf("test_uid_%d",uid),

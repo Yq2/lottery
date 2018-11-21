@@ -2,9 +2,7 @@ package identity
 
 import (
 	"time"
-
 	"github.com/kataras/iris"
-
 	"github.com/Yq2/lottery/bootstrap"
 )
 
