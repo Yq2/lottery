@@ -40,7 +40,9 @@ func (serv *rpcServer) checkParams(uid int64, username string, ip string, now in
 		fmt.Println("[checkParams].uid参数不正确")
 		return errors.New("uid参数不正确")
 	}
-	str := fmt.Sprint("uid=%d&username=%s&ip=%s&now=%d&app=%s",
+	//str := fmt.Sprint("uid=%d&username=%s&ip=%s&now=%d&app=%s",
+	//	uid, username, ip, now, app)
+	str := fmt.Sprintf("uid=%d&username=%s&ip=%s&now=%d&app=%s",
 		uid, username, ip, now, app)
 	usign := comm.CreateSign(str)
 	if usign != sign {
