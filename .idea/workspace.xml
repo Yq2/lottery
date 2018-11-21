@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ddddb13e-30b4-4815-8013-7b56bf3e33d1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/rpc/lucky_service-remote/go_client/goclient_main.go" beforeDir="false" afterPath="$PROJECT_DIR$/rpc/lucky_service-remote/go_client/goclient_main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rpc/lucky_service-remote/lucky_service-remote.go" beforeDir="false" afterPath="$PROJECT_DIR$/rpc/lucky_service-remote/lucky_service-remote.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/controllers/index_lucky_9prize.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/controllers/index_lucky_9prize.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/controllers/index_lucky_api.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/controllers/index_lucky_api.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/controllers/rpc.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/controllers/rpc.go" afterDir="false" />
-    </list>
+    <list default="true" id="ddddb13e-30b4-4815-8013-7b56bf3e33d1" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

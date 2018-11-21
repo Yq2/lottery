@@ -112,7 +112,7 @@ func main() {
 	// 远程方法调用的参数
 	var cmd string = "DoLucky"
 	//var cmd string = "MyPrizeList"
-	var uid int64 = int64(comm.Random(100000))
+	var uid int64 = int64(comm.Random(100))
 	username := fmt.Sprintf("rpc_test_%d",comm.Random(1000))
 	ip := fmt.Sprintf("%d.%d.%d.%d",
 		comm.Random(256),
