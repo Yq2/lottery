@@ -6,6 +6,7 @@ import (
 	"github.com/Yq2/lottery/conf"
 	"github.com/Yq2/lottery/web/middleware/identity"
 	"github.com/Yq2/lottery/web/routes"
+	_ "net/http/pprof"
 )
 
 const  port = 8085
