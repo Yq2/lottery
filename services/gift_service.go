@@ -161,16 +161,16 @@ func (s *giftService) GetAllUse(useCache bool) []models.ObjGiftPrize {
 
 func (s *giftService) IncrLeftNum(id, num int) (int64, error) {
 	//自己加的
-	data := new(models.LtGift)
-	s.updateByCache(data, nil)
+	//data := new(models.LtGift)
+	//s.updateByCache(data, nil)
 
 	return s.dao.IncrLeftNum(id, num)
 }
 
 func (s *giftService) DecrLeftNum(id, num int) (int64, error) {
 	//自己加的
-	data := new(models.LtGift)
-	s.updateByCache(data, nil)
+	//data := new(models.LtGift)
+	//s.updateByCache(data, nil)
 
 	return s.dao.DecrLeftNum(id, num)
 }
