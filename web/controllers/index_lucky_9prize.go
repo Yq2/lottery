@@ -11,7 +11,7 @@ import (
 //prizeCode 是小于最大抽奖编号的随机抽奖号码
 //ObjGiftPrize 用于输出给前端抽奖结果信息
 func (api *LuckyApi) prize(prizeCode int, limitBlack bool) *models.ObjGiftPrize {
-	fmt.Println("\nprize...")
+	fmt.Println("prize...")
 	var prizeGift *models.ObjGiftPrize
 	//获取所有有效的奖品信息
 	giftList := services.NewGiftService().GetAllUse(true)
