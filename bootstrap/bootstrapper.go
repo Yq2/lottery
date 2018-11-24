@@ -8,6 +8,7 @@ import (
 	"github.com/kataras/iris/sessions"
 	"github.com/Yq2/lottery/conf"
 	"github.com/Yq2/lottery/cron"
+	"github.com/kataras/iris/websocket"
 	"time"
 )
 //对外暴露bootstrap配置器函数
@@ -71,15 +72,15 @@ func (b *Bootstrapper) SetupSessions(expires time.Duration, cookieHashKey, cooki
 }
 
 //// SetupWebsockets prepares the websocket server.
-//func (b *Bootstrapper) SetupWebsockets(endpoint string, onConnection websocket.ConnectionFunc) {
-//	ws := websocket.New(websocket.Config{})
-//	ws.OnConnection(onConnection)
-//
-//	b.Get(endpoint, ws.Handler())
-//	b.Any("/iris-ws.js", func(ctx iris.Context) {
-//		ctx.Write(websocket.ClientSource)
-//	})
-//}
+func (b *Bootstrapper) SetupWebsockets(endpoint string, onConnection websocket.ConnectionFunc) {
+	ws := websocket.New(websocket.Config{})
+	ws.OnConnection(onConnection)
+
+	b.Get(endpoint, ws.Handler())
+	b.Any("/iris-ws.js", func(ctx iris.Context) {
+		ctx.Write(websocket.ClientSource)
+	})
+}
 
 // SetupErrorHandlers prepares the http error handlers
 // `(context.StatusCodeNotSuccessful`,  which defaults to < 200 || >= 400 but you can change it).

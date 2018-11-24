@@ -19,7 +19,7 @@ import (
 	"strings"
 	"time"
 	"math/rand"
-	)
+)
 
 // 奖品中奖概率
 type Prate struct {
