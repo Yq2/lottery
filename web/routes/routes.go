@@ -23,6 +23,11 @@ func Configure(b *bootstrap.Bootstrapper) {
 	index.Register(userService, giftService, codeService, resultService, userdayService, blackipService)
 	//注册controller
 	index.Handle(new(controllers.IndexController))
+
+	//debug
+	//debug := mvc.New(b.Party("/debug"))
+	//debug.Handle(new(controllers.PprofController))
+
 	//admin路由
 	admin := mvc.New(b.Party("/admin"))
 	admin.Router.Use(middleware.BasicAuth)
