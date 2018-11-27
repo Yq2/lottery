@@ -1,0 +1,141 @@
+goroutine profile: total 1012
+1000 @ 0x42ee6f 0x42ef35 0x449edb 0xa21469 0x45a821
+#	0x449eda	time.Sleep+0x17a	D:/Program Files (x86)/Go/src/runtime/time.go:102
+#	0xa21468	main.test_01.func1+0x58	E:/web/Go/GoPath/src/github.com/Yq2/lottery/web/main.go:49
+
+2 @ 0x42ee6f 0x43e875 0x60df85 0x45a821
+#	0x60df84	net.(*netFD).connect.func2+0xe4	D:/Program Files (x86)/Go/src/net/fd_windows.go:105
+
+1 @ 0x40f9d9 0x44172d 0x7f8229 0x45a821
+#	0x44172c	os/signal.signal_recv+0xac	D:/Program Files (x86)/Go/src/runtime/sigqueue.go:139
+#	0x7f8228	os/signal.loop+0x28		D:/Program Files (x86)/Go/src/os/signal/signal_unix.go:22
+
+1 @ 0x42ee6f 0x428701 0x427cfe 0x4a3fb2 0x4a51fa 0x4a83b0 0x5ec936 0x602973 0x602512 0x5f9668 0x606940 0x60683b 0x5e9f4c 0x5e9554 0x5e87df 0x5e810c 0x9a47a7 0x9ba05f 0x8e49dc 0x8f3caa 0x8e6a08 0x8e948d 0x8e91b9 0x8e93d9 0x8f5e87 0x973726 0x965580 0x961bd6 0x96108e 0x99a453 0x9bd4a0 0x9c3c44
+#	0x427cfd	internal/poll.runtime_pollWait+0x5d				D:/Program Files (x86)/Go/src/runtime/netpoll.go:173
+#	0x4a3fb1	internal/poll.(*pollDesc).wait+0xa1				D:/Program Files (x86)/Go/src/internal/poll/fd_poll_runtime.go:85
+#	0x4a51f9	internal/poll.(*ioSrv).ExecIO+0x139				D:/Program Files (x86)/Go/src/internal/poll/fd_windows.go:223
+#	0x4a83af	internal/poll.(*FD).ConnectEx+0x7f				D:/Program Files (x86)/Go/src/internal/poll/fd_windows.go:783
+#	0x5ec935	net.(*netFD).connect+0x225					D:/Program Files (x86)/Go/src/net/fd_windows.go:116
+#	0x602972	net.(*netFD).dial+0xf2						D:/Program Files (x86)/Go/src/net/sock_posix.go:142
+#	0x602511	net.socket+0x1c1						D:/Program Files (x86)/Go/src/net/sock_posix.go:93
+#	0x5f9667	net.internetSocket+0x157					D:/Program Files (x86)/Go/src/net/ipsock_posix.go:141
+#	0x60693f	net.doDialTCP+0xbf						D:/Program Files (x86)/Go/src/net/tcpsock_posix.go:62
+#	0x60683a	net.dialTCP+0xea						D:/Program Files (x86)/Go/src/net/tcpsock_posix.go:58
+#	0x5e9f4b	net.dialSingle+0x37b						D:/Program Files (x86)/Go/src/net/dial.go:547
+#	0x5e9553	net.dialSerial+0x233						D:/Program Files (x86)/Go/src/net/dial.go:515
+#	0x5e87de	net.(*Dialer).DialContext+0x67e					D:/Program Files (x86)/Go/src/net/dial.go:397
+#	0x5e810b	net.(*Dialer).Dial+0x7b						D:/Program Files (x86)/Go/src/net/dial.go:320
+#	0x9a47a6	github.com/go-sql-driver/mysql.MySQLDriver.Open+0xbd6		E:/web/Go/GoPath/src/github.com/go-sql-driver/mysql/driver.go:77
+#	0x8e49db	database/sql.dsnConnector.Connect+0x4b				D:/Program Files (x86)/Go/src/database/sql/sql.go:600
+#	0x8e6a07	database/sql.(*DB).conn+0x137					D:/Program Files (x86)/Go/src/database/sql/sql.go:1103
+#	0x8e948c	database/sql.(*DB).query+0x6c					D:/Program Files (x86)/Go/src/database/sql/sql.go:1437
+#	0x8e91b8	database/sql.(*DB).QueryContext+0xd8				D:/Program Files (x86)/Go/src/database/sql/sql.go:1419
+#	0x8e93d8	database/sql.(*DB).Query+0x88					D:/Program Files (x86)/Go/src/database/sql/sql.go:1433
+#	0x8f5e86	github.com/go-xorm/core.(*DB).Query+0x76			E:/web/Go/GoPath/src/github.com/go-xorm/core/db.go:112
+#	0x973725	github.com/go-xorm/xorm.(*Session).queryRows+0x3c5		E:/web/Go/GoPath/src/github.com/go-xorm/xorm/session_raw.go:72
+#	0x96557f	github.com/go-xorm/xorm.(*Session).cacheFind+0x258f		E:/web/Go/GoPath/src/github.com/go-xorm/xorm/session_find.go:342
+#	0x961bd5	github.com/go-xorm/xorm.(*Session).find+0x715			E:/web/Go/GoPath/src/github.com/go-xorm/xorm/session_find.go:182
+#	0x96108d	github.com/go-xorm/xorm.(*Session).Find+0x7d			E:/web/Go/GoPath/src/github.com/go-xorm/xorm/session_find.go:29
+#	0x99a452	github.com/Yq2/lottery/dao.(*GiftDao).GetAll+0x142		E:/web/Go/GoPath/src/github.com/Yq2/lottery/dao/gift_dao.go:39
+#	0x9bd49f	github.com/Yq2/lottery/services.(*giftService).GetAll+0xcf	E:/web/Go/GoPath/src/github.com/Yq2/lottery/services/gift_service.go:43
+#	0x9c3c43	github.com/Yq2/lottery/web/utils.DistributionGiftPool+0x73	E:/web/Go/GoPath/src/github.com/Yq2/lottery/web/utils/prizedata.go:129
+
+1 @ 0x42ee6f 0x428701 0x427cfe 0x4a3fb2 0x4a51fa 0x4a83b0 0x5ec936 0x602973 0x602512 0x5f9668 0x606940 0x60683b 0x5e9f4c 0x5e9554 0x5e87df 0x5e810c 0x9a47a7 0x9ba05f 0x8e49dc 0x8f3caa 0x8e6a08 0x8e948d 0x8e91b9 0x8e93d9 0x8f5e87 0x973726 0x965580 0x961bd6 0x96108e 0x99a453 0x9bd4a0 0x9c862e
+#	0x427cfd	internal/poll.runtime_pollWait+0x5d				D:/Program Files (x86)/Go/src/runtime/netpoll.go:173
+#	0x4a3fb1	internal/poll.(*pollDesc).wait+0xa1				D:/Program Files (x86)/Go/src/internal/poll/fd_poll_runtime.go:85
+#	0x4a51f9	internal/poll.(*ioSrv).ExecIO+0x139				D:/Program Files (x86)/Go/src/internal/poll/fd_windows.go:223
+#	0x4a83af	internal/poll.(*FD).ConnectEx+0x7f				D:/Program Files (x86)/Go/src/internal/poll/fd_windows.go:783
+#	0x5ec935	net.(*netFD).connect+0x225					D:/Program Files (x86)/Go/src/net/fd_windows.go:116
+#	0x602972	net.(*netFD).dial+0xf2						D:/Program Files (x86)/Go/src/net/sock_posix.go:142
+#	0x602511	net.socket+0x1c1						D:/Program Files (x86)/Go/src/net/sock_posix.go:93
+#	0x5f9667	net.internetSocket+0x157					D:/Program Files (x86)/Go/src/net/ipsock_posix.go:141
+#	0x60693f	net.doDialTCP+0xbf						D:/Program Files (x86)/Go/src/net/tcpsock_posix.go:62
+#	0x60683a	net.dialTCP+0xea						D:/Program Files (x86)/Go/src/net/tcpsock_posix.go:58
+#	0x5e9f4b	net.dialSingle+0x37b						D:/Program Files (x86)/Go/src/net/dial.go:547
+#	0x5e9553	net.dialSerial+0x233						D:/Program Files (x86)/Go/src/net/dial.go:515
+#	0x5e87de	net.(*Dialer).DialContext+0x67e					D:/Program Files (x86)/Go/src/net/dial.go:397
+#	0x5e810b	net.(*Dialer).Dial+0x7b						D:/Program Files (x86)/Go/src/net/dial.go:320
+#	0x9a47a6	github.com/go-sql-driver/mysql.MySQLDriver.Open+0xbd6		E:/web/Go/GoPath/src/github.com/go-sql-driver/mysql/driver.go:77
+#	0x8e49db	database/sql.dsnConnector.Connect+0x4b				D:/Program Files (x86)/Go/src/database/sql/sql.go:600
+#	0x8e6a07	database/sql.(*DB).conn+0x137					D:/Program Files (x86)/Go/src/database/sql/sql.go:1103
+#	0x8e948c	database/sql.(*DB).query+0x6c					D:/Program Files (x86)/Go/src/database/sql/sql.go:1437
+#	0x8e91b8	database/sql.(*DB).QueryContext+0xd8				D:/Program Files (x86)/Go/src/database/sql/sql.go:1419
+#	0x8e93d8	database/sql.(*DB).Query+0x88					D:/Program Files (x86)/Go/src/database/sql/sql.go:1433
+#	0x8f5e86	github.com/go-xorm/core.(*DB).Query+0x76			E:/web/Go/GoPath/src/github.com/go-xorm/core/db.go:112
+#	0x973725	github.com/go-xorm/xorm.(*Session).queryRows+0x3c5		E:/web/Go/GoPath/src/github.com/go-xorm/xorm/session_raw.go:72
+#	0x96557f	github.com/go-xorm/xorm.(*Session).cacheFind+0x258f		E:/web/Go/GoPath/src/github.com/go-xorm/xorm/session_find.go:342
+#	0x961bd5	github.com/go-xorm/xorm.(*Session).find+0x715			E:/web/Go/GoPath/src/github.com/go-xorm/xorm/session_find.go:182
+#	0x96108d	github.com/go-xorm/xorm.(*Session).Find+0x7d			E:/web/Go/GoPath/src/github.com/go-xorm/xorm/session_find.go:29
+#	0x99a452	github.com/Yq2/lottery/dao.(*GiftDao).GetAll+0x142		E:/web/Go/GoPath/src/github.com/Yq2/lottery/dao/gift_dao.go:39
+#	0x9bd49f	github.com/Yq2/lottery/services.(*giftService).GetAll+0xcf	E:/web/Go/GoPath/src/github.com/Yq2/lottery/services/gift_service.go:43
+#	0x9c862d	github.com/Yq2/lottery/cron.resetAllGiftPrizeData+0xcd		E:/web/Go/GoPath/src/github.com/Yq2/lottery/cron/run_one.go:28
+
+1 @ 0x42ee6f 0x428701 0x427cfe 0x4a3fb2 0x4a51fa 0x4a849e 0x4a8732 0x5ed7f6 0x606d55 0x605240 0x6f64f6 0x6f524c 0x6f4f90 0x6f6001 0xa213ed 0x45a821
+#	0x427cfd	internal/poll.runtime_pollWait+0x5d		D:/Program Files (x86)/Go/src/runtime/netpoll.go:173
+#	0x4a3fb1	internal/poll.(*pollDesc).wait+0xa1		D:/Program Files (x86)/Go/src/internal/poll/fd_poll_runtime.go:85
+#	0x4a51f9	internal/poll.(*ioSrv).ExecIO+0x139		D:/Program Files (x86)/Go/src/internal/poll/fd_windows.go:223
+#	0x4a849d	internal/poll.(*FD).acceptOne+0xad		D:/Program Files (x86)/Go/src/internal/poll/fd_windows.go:793
+#	0x4a8731	internal/poll.(*FD).Accept+0x141		D:/Program Files (x86)/Go/src/internal/poll/fd_windows.go:827
+#	0x5ed7f5	net.(*netFD).accept+0x85			D:/Program Files (x86)/Go/src/net/fd_windows.go:192
+#	0x606d54	net.(*TCPListener).accept+0x34			D:/Program Files (x86)/Go/src/net/tcpsock_posix.go:136
+#	0x60523f	net.(*TCPListener).AcceptTCP+0x4f		D:/Program Files (x86)/Go/src/net/tcpsock.go:246
+#	0x6f64f5	net/http.tcpKeepAliveListener.Accept+0x35	D:/Program Files (x86)/Go/src/net/http/server.go:3219
+#	0x6f524b	net/http.(*Server).Serve+0x1ab			D:/Program Files (x86)/Go/src/net/http/server.go:2773
+#	0x6f4f8f	net/http.(*Server).ListenAndServe+0xaf		D:/Program Files (x86)/Go/src/net/http/server.go:2714
+#	0x6f6000	net/http.ListenAndServe+0x80			D:/Program Files (x86)/Go/src/net/http/server.go:2972
+#	0xa213ec	main.Mintor.func1+0x9c				E:/web/Go/GoPath/src/github.com/Yq2/lottery/web/main.go:40
+
+1 @ 0x42ee6f 0x42ef35 0x403339 0x4030c5 0x8297a5 0x82a493 0x829e8e 0x45a821
+#	0x8297a4	text/template/parse.(*lexer).emit+0xb4	D:/Program Files (x86)/Go/src/text/template/parse/lex.go:154
+#	0x82a492	text/template/parse.lexLeftDelim+0xf2	D:/Program Files (x86)/Go/src/text/template/parse/lex.go:306
+#	0x829e8d	text/template/parse.(*lexer).run+0x3d	D:/Program Files (x86)/Go/src/text/template/parse/lex.go:228
+
+1 @ 0x42ee6f 0x42ef35 0x403fa0 0x403c4b 0x83066e 0x83325a 0x8331da 0x832e08 0x834877 0x835053 0x83362a 0x8331da 0x832113 0x83176d 0x8304af 0x84a6ff 0x858c0c 0x8b2008 0x575929 0x5757e9 0x5757e9 0x575a6d 0x8afabe 0x8af8a0 0x8b19ba 0x8b8831 0x470265 0x8b817b 0x8b823c 0x9ddac6 0xa2126f 0x42ea2e
+#	0x83066d	text/template/parse.(*lexer).nextItem+0x15d				D:/Program Files (x86)/Go/src/text/template/parse/lex.go:195
+#	0x83066d	text/template/parse.(*Tree).next+0x15d					D:/Program Files (x86)/Go/src/text/template/parse/parse.go:64
+#	0x83066d	text/template/parse.(*Tree).nextNonSpace+0x15d				D:/Program Files (x86)/Go/src/text/template/parse/parse.go:102
+#	0x833259	text/template/parse.(*Tree).action+0x49					D:/Program Files (x86)/Go/src/text/template/parse/parse.go:361
+#	0x8331d9	text/template/parse.(*Tree).textOrAction+0x209				D:/Program Files (x86)/Go/src/text/template/parse/parse.go:348
+#	0x832e07	text/template/parse.(*Tree).itemList+0x127				D:/Program Files (x86)/Go/src/text/template/parse/parse.go:330
+#	0x834876	text/template/parse.(*Tree).parseControl+0xf6				D:/Program Files (x86)/Go/src/text/template/parse/parse.go:456
+#	0x835052	text/template/parse.(*Tree).rangeControl+0x52				D:/Program Files (x86)/Go/src/text/template/parse/parse.go:498
+#	0x833629	text/template/parse.(*Tree).action+0x419				D:/Program Files (x86)/Go/src/text/template/parse/parse.go:371
+#	0x8331d9	text/template/parse.(*Tree).textOrAction+0x209				D:/Program Files (x86)/Go/src/text/template/parse/parse.go:348
+#	0x832112	text/template/parse.(*Tree).parse+0x3d2					D:/Program Files (x86)/Go/src/text/template/parse/parse.go:294
+#	0x83176c	text/template/parse.(*Tree).Parse+0x22c					D:/Program Files (x86)/Go/src/text/template/parse/parse.go:233
+#	0x8304ae	text/template/parse.Parse+0x10e						D:/Program Files (x86)/Go/src/text/template/parse/parse.go:55
+#	0x84a6fe	text/template.(*Template).Parse+0x11e					D:/Program Files (x86)/Go/src/text/template/template.go:198
+#	0x858c0b	html/template.(*Template).Parse+0x8b					D:/Program Files (x86)/Go/src/html/template/template.go:189
+#	0x8b2007	github.com/kataras/iris/view.(*HTMLEngine).loadDirectory.func1+0x3e7	E:/web/Go/GoPath/src/github.com/kataras/iris/view/html.go:277
+#	0x575928	path/filepath.walk+0x408						D:/Program Files (x86)/Go/src/path/filepath/path.go:357
+#	0x5757e8	path/filepath.walk+0x2c8						D:/Program Files (x86)/Go/src/path/filepath/path.go:381
+#	0x5757e8	path/filepath.walk+0x2c8						D:/Program Files (x86)/Go/src/path/filepath/path.go:381
+#	0x575a6c	path/filepath.Walk+0x10c						D:/Program Files (x86)/Go/src/path/filepath/path.go:403
+#	0x8afabd	github.com/kataras/iris/view.(*HTMLEngine).loadDirectory+0x1ad		E:/web/Go/GoPath/src/github.com/kataras/iris/view/html.go:245
+#	0x8af89f	github.com/kataras/iris/view.(*HTMLEngine).Load+0x8f			E:/web/Go/GoPath/src/github.com/kataras/iris/view/html.go:234
+#	0x8b19b9	github.com/kataras/iris/view.(*View).Load+0x79				E:/web/Go/GoPath/src/github.com/kataras/iris/view/view.go:75
+#	0x8b8830	github.com/kataras/iris.(*Application).Build.func1+0x250		E:/web/Go/GoPath/src/github.com/kataras/iris/iris.go:776
+#	0x470264	sync.(*Once).Do+0xc4							D:/Program Files (x86)/Go/src/sync/once.go:44
+#	0x8b817a	github.com/kataras/iris.(*Application).Build+0x7a			E:/web/Go/GoPath/src/github.com/kataras/iris/iris.go:755
+#	0x8b823b	github.com/kataras/iris.(*Application).Run+0x3b				E:/web/Go/GoPath/src/github.com/kataras/iris/iris.go:805
+#	0x9ddac5	github.com/Yq2/lottery/bootstrap.(*Bootstrapper).Listen+0x85		E:/web/Go/GoPath/src/github.com/Yq2/lottery/bootstrap/bootstrapper.go:162
+#	0xa2126e	main.main+0xce								E:/web/Go/GoPath/src/github.com/Yq2/lottery/web/main.go:34
+#	0x42ea2d	runtime.main+0x20d							D:/Program Files (x86)/Go/src/runtime/proc.go:198
+
+1 @ 0x42ee6f 0x42ef35 0x449edb 0x8cd304 0x45a821
+#	0x449eda	time.Sleep+0x17a			D:/Program Files (x86)/Go/src/runtime/time.go:102
+#	0x8cd303	runtime/pprof.profileWriter+0x73	D:/Program Files (x86)/Go/src/runtime/pprof/pprof.go:750
+
+1 @ 0x42ee6f 0x43e875 0x8e6220 0x45a821
+#	0x8e621f	database/sql.(*DB).connectionOpener+0x11f	D:/Program Files (x86)/Go/src/database/sql/sql.go:935
+
+1 @ 0x42ee6f 0x43e875 0x8e6391 0x45a821
+#	0x8e6390	database/sql.(*DB).connectionResetter+0x130	D:/Program Files (x86)/Go/src/database/sql/sql.go:948
+
+1 @ 0x8ccf8f 0x8ccd87 0x8c981b 0x9c827a 0x9c7b19 0x45a821
+#	0x8ccf8e	runtime/pprof.writeRuntimeProfile+0x9e		D:/Program Files (x86)/Go/src/runtime/pprof/pprof.go:679
+#	0x8ccd86	runtime/pprof.writeGoroutine+0xa6		D:/Program Files (x86)/Go/src/runtime/pprof/pprof.go:641
+#	0x8c981a	runtime/pprof.(*Profile).WriteTo+0x3ea		D:/Program Files (x86)/Go/src/runtime/pprof/pprof.go:310
+#	0x9c8279	github.com/Yq2/lottery/cron.SaveProfile+0x1f9	E:/web/Go/GoPath/src/github.com/Yq2/lottery/cron/run_all.go:116
+#	0x9c7b18	github.com/Yq2/lottery/cron.pprofRun+0xe8	E:/web/Go/GoPath/src/github.com/Yq2/lottery/cron/run_all.go:37
+

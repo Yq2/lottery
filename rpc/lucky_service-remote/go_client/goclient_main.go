@@ -29,10 +29,10 @@ func Usage() {
 
 func main() {
 	flag.Usage = Usage
-	var host string = "39.107.77.94"
+	var host string = "localhost"
 	var port int = 8085
 	var protocol string = "json"
-	var urlString string = "http://39.107.77.94:8085/rpc"
+	var urlString string = "http://localhost:8085/rpc"
 	var framed bool = true
 	var useHttp bool = true
 	var parsedUrl *url.URL

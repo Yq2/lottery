@@ -2,9 +2,11 @@
 package cron
 
 import (
+	"errors"
 	"fmt"
 	"log"
 	"os"
+	"path/filepath"
 	"runtime"
 	"runtime/pprof"
 )
@@ -13,14 +15,16 @@ import (
  * 需要每个应用服务器都要运行的服务
  * 单个应用的服务
  */
-const pprof_cpu_file  = "./cpu.prof"
-const pprof_mem_file  = "./mem.out"
-const pprof_block_file  = "./block.out"
+const pprof_cpu_file  = "../debug/cpu.prof"
+const pprof_mem_file  = "../debug/mem.out"
+const pprof_block_file  = "../debug/block.out"
 const mem_profile_rate  = 512 * 1024  //每分配指定的字节数量后对内存使用情况进行取样,默认512K
-const block_profile_rate   = 5 //每发生几次Goroutine阻塞事件时对这些事件进行取样，默认1
- 
+const block_profile_rate   = 1 //每发生几次Goroutine阻塞事件时对这些事件进行取样，默认1
+
+type ProfileType string
+
 func ConfigueAppAllCron() {
-	go pprofRun()
+	 go pprofRun()
 }
 
 func pprofRun() {
@@ -30,6 +34,8 @@ func pprofRun() {
 	defer stopMemProfile()
 	stopBlockProfile()
 	defer stopBlockProfile()
+	SaveProfile("../debug/","goroutine.out","goroutine",1)
+	SaveProfile("../debug/","threadcreate.out","threadcreate",1)
 }
 
 func startCPUProfile() {
@@ -89,4 +95,34 @@ func stopBlockProfile() {
 		}
 		f.Close()
 	}
+}
+
+func SaveProfile(workDir string, profileName string, ptype ProfileType, debug int) {
+	//workDir 文件存放的目录
+	//profileName 概要文件的名称，必须为 "goroutine","threadcreate","heap","block"中的一个
+	//ptype 概要文件的类型
+	//debug = 0,1,2
+	absWorkDir := getAbsFilePath(workDir)
+	if profileName == "" {
+		profileName = string(ptype)
+	}
+	profilePath := filepath.Join(absWorkDir, profileName)
+	//f, err := os.Create(profilePath)
+	f, err := os.OpenFile(profilePath, os.O_RDWR|os.O_CREATE, 0644)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Can not create profile output file: %s", err)
+		return
+	}
+	if err = pprof.Lookup(string(ptype)).WriteTo(f, debug); err != nil {
+		fmt.Fprintf(os.Stderr, "Can not write %s: %s", profilePath, err)
+	}
+	f.Close()
+}
+
+func getAbsFilePath(dir string) string{
+	fpt, err := filepath.Abs(dir)
+	if err != nil {
+		panic(errors.New(fmt.Sprintf("getAbsFilePath.%s",err)))
+	}
+	return fpt
 }
