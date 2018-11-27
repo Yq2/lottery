@@ -1,0 +1,28 @@
+package: github.com/Yq2/lottery
+import:
+- package: git.apache.org/thrift.git
+  version: ~0.11.0
+  subpackages:
+  - lib/go/thrift
+- package: github.com/go-sql-driver/mysql
+  version: ~1.4.1
+- package: github.com/go-xorm/xorm
+  version: ~0.7.1
+- package: github.com/gomodule/redigo
+  version: ~2.0.0
+  subpackages:
+  - redis
+- package: github.com/gorilla/securecookie
+  version: ~1.1.1
+- package: github.com/kataras/iris
+  version: ~11.1.0
+  subpackages:
+  - core/errors
+  - middleware/basicauth
+  - middleware/logger
+  - middleware/recover
+  - mvc
+  - sessions
+  - websocket
+- package: github.com/lunny/log
+  version: ~0.1.0
